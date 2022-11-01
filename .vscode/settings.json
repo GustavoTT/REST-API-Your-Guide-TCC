@@ -12,6 +12,19 @@
             "database": "ecommerce",
             "username": "root",
             "password": "root"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "us-cdbr-east-06.cleardb.net",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "cleardb-heroku",
+            "database": "heroku_9ed00a814faa026",
+            "username": "b0e9a1f5edb07b",
+            "password": "7bf4349e"
         }
     ]
 }
