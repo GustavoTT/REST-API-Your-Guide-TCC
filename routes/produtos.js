@@ -21,7 +21,7 @@ router.get('/', (req, res, next) => { // Lista com todos os produtos
                         type_request: {
                             tipo: 'GET',
                             descricao: 'Retorna os detalhes de um produto específico',
-                            url: process.env.URL_API + 'produtos/' + prod.id_produto // URL individual do produto, ideal que seja var de ambiente
+                            url: process.env.URL_API + '/produtos/' + prod.id_produto // URL individual do produto, ideal que seja var de ambiente
                         }
                     }
                 })
@@ -50,7 +50,7 @@ router.post('/', (req, res, next) => {
                                 type_request: {
                                     tipo: 'GET',
                                     descricao: 'Retorna todos os produto',
-                                    url: process.env.URL_API + 'produtos' // Ideal que seja var de ambiente
+                                    url: process.env.URL_API + '/produtos' // Ideal que seja var de ambiente
                                 }
                             }
                         }
@@ -81,7 +81,7 @@ router.get('/:id_produto', (req, res, next) => { // Lista de um produto em espec
                     type_request: {
                         tipo: 'GET',
                         descricao: 'Retorna todos os produto',
-                        url: process.env.URL_API + 'produtos' // Ideal que seja var de ambiente
+                        url: process.env.URL_API + '/produtos' // Ideal que seja var de ambiente
                     }
                 }
             }
@@ -116,7 +116,7 @@ router.patch('/', (req, res, next) => {
                                 type_request: {
                                     tipo: 'GET',
                                     descricao: 'Retorna os detalhes de um produto específico',
-                                    url: process.env.URL_API + 'produtos/' + req.body.id_produto // URL individual do produto, ideal que seja var de ambiente
+                                    url: process.env.URL_API + '/produtos/' + req.body.id_produto // URL individual do produto, ideal que seja var de ambiente
                                 }
                             }
                         }
