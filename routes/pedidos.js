@@ -30,7 +30,7 @@ router.get('/', (req, res, next) => { // Lista com todos os produtos
                         type_request: {
                             tipo: 'GET',
                             descricao: 'Retorna os detalhes de um pedido específico',
-                            url: 'http://localhost:3000/pedidos/' + pedido.id_pedido // URL individual do produto, ideal que seja var de ambiente
+                            url: process.env.URL_API + 'pedidos/' + pedido.id_pedido // URL individual do produto, ideal que seja var de ambiente
                         }
                     }
                 })
@@ -68,7 +68,7 @@ router.post('/', (req, res, next) => {
                                 type_request: {
                                     tipo: 'GET',
                                     descricao: 'Retorna todos os pedidos',
-                                    url: 'http://localhost:3000/pedidos' // Ideal que seja var de ambiente
+                                    url: process.env.URL_API + 'pedidos' // Ideal que seja var de ambiente
                                 }
                             }
                         }
@@ -100,7 +100,7 @@ router.get('/:id_pedido', (req, res, next) => { // Lista de um pedido em especí
                     type_request: {
                         tipo: 'GET',
                         descricao: 'Retorna todos os pedidos',
-                        url: 'http://localhost:3000/pedidos' // Ideal que seja var de ambiente
+                        url: process.env.URL_API + 'pedidos' // Ideal que seja var de ambiente
                     }
                 }
             }
