@@ -139,7 +139,7 @@ router.delete('/', (req, res, next) => {
                             type_request: {
                                 tipo: 'POST',
                                 descricao: 'Insere um produto',
-                                url: 'http://localhost3000/produtos',
+                                url: process.env.URL_API + '/produtos',
                                 body_req: {
                                     nome: 'String',
                                     preco: 'Number'
