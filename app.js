@@ -4,7 +4,6 @@ const morgan     = require('morgan');
 const bodyParser = require ('body-parser');
 
 const rProdutos = require('./routes/produtos');
-const rPedidos  = require('./routes/pedidos');
 
 app.use(morgan('dev')); // Retorna no console a atividade realizada
 app.use(bodyParser.urlencoded({ extended: false })); // Aceita apenas dados simples
@@ -24,7 +23,6 @@ app.use((req, res, next) => { // Determina as informações de cabeçalho que se
 });
 
 app.use('/produtos', rProdutos);
-app.use('/pedidos', rPedidos);
 
 app.use((req, res, next) => { // Não encontra a rota
     const erro = new Error('Não encontrado');
