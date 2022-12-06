@@ -55,11 +55,13 @@ router.post('/', (req, res, next) => {
 
 
 // EXEMPLO GET, retorna os dados de um produto
-router.get('/:id', (req, res, next) => { // Lista de um produto em específico
+router.get('/:nome_produto', (req, res, next) => { // Lista de um produto em específico
+    const value = req.params.nome_produto;
+    const nome = value.replace("%20", " ");
     mysql.getConnection((error, conn) => {
         if (error) { return res.status(500).send({ error : error })} // Se tiver um erro retorna o próprio erro
-        conn.query('SELECT * FROM tb_produtos WHERE id = ?;',
-        [req.params.id], // Pega do parâmetro lá em cima
+        conn.query('SELECT * FROM tb_produtos WHERE nome_prod = ?;',
+        [nome], // Pega do parâmetro lá em cima
         (error, result, field) => {
             if (error) { return res.status(500).send({ error : error })} // Se tiver um erro retorna o próprio erro
             if (result.length == 0) {
